@@ -1,0 +1,8 @@
+logs/
+tmp/
+backup/
+.git/
+*.tmp
+*.log
+node_modules/
+
