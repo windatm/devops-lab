@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Docker Compose Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Task Manager</h1>
+            <p class="subtitle">Docker Compose Lab - Multi-container Application</p>
+        </header>
+
+        <div class="task-form">
+            <h2>Thêm Task Mới</h2>
+            <form id="taskForm">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="Nhập tên task..." 
+                    required
+                >
+                <button type="submit">Thêm Task</button>
+            </form>
+        </div>
+
+        <div class="task-list">
+            <h2>Danh Sách Tasks</h2>
+            <div id="loading" class="loading">Đang tải...</div>
+            <ul id="taskList"></ul>
+            <div id="error" class="error" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

@@ -9,6 +9,7 @@ Bộ bài thực hành DevOps về Docker và Kubernetes, phù hợp cho ngườ
 - [Prerequisites](#prerequisites)
 - [Các bài lab](#các-bài-lab)
   - [Building Images Lab](#building-images-lab)
+  - [Docker Compose Lab](#docker-compose-lab)
   - [Kubernetes YAML Labs](#kubernetes-yaml-labs)
 - [Bắt đầu](#bắt-đầu)
 - [Đóng góp](#đóng-góp)
@@ -18,6 +19,7 @@ Bộ bài thực hành DevOps về Docker và Kubernetes, phù hợp cho ngườ
 Repo này chứa các bài thực hành thực tế về:
 
 - **Docker**: Build images, Dockerfile, build context, environment variables
+- **Docker Compose**: Multi-container orchestration, services, networks, volumes
 - **Kubernetes**: Pod, Deployment, Service, YAML configuration, debugging
 
 Tất cả bài lab đều có:
@@ -36,6 +38,12 @@ devops-lab/
 │   ├── README.md
 │   ├── nginx-demo/           # Lab nginx với Dockerfile
 │   └── env-basic/            # Lab environment variables
+├── docker-compose-lab/       # Docker Compose lab: Multi-container app
+│   ├── README.md
+│   ├── docker-compose.yml    # Compose configuration
+│   ├── frontend/             # Frontend HTML/JS
+│   ├── backend/              # Backend Node.js service
+│   └── scripts/              # Cleanup scripts
 └── k8s-yaml-labs/            # Kubernetes lab: YAML configuration
     ├── README.md
     ├── 01-pod/               # Pod basics
@@ -54,6 +62,13 @@ devops-lab/
 - Docker Engine hoặc Docker Desktop đã cài đặt
 - Kiểm tra: `docker version`
 - Quyền chạy Docker (user trong group `docker` hoặc root)
+
+### Cho Docker Compose Lab
+
+- Docker Engine hoặc Docker Desktop đã cài đặt
+- Docker Compose v2 (thường đi kèm với Docker Desktop)
+- Kiểm tra: `docker compose version`
+- Quyền chạy Docker
 
 ### Cho Kubernetes YAML Labs
 
@@ -83,6 +98,22 @@ Học cách build Docker images với Dockerfile, quản lý build context, và 
 - Environment variables trong Dockerfile
 
 **Bắt đầu**: Xem [building-images/README.md](building-images/README.md)
+
+### Docker Compose Lab
+
+Học cách sử dụng Docker Compose để orchestrate multi-container application với frontend, backend service, và database.
+
+**Thư mục**: [`docker-compose-lab/`](docker-compose-lab/)
+
+**Nội dung**:
+
+- Triển khai web app với 3 services: frontend, backend, database
+- Sử dụng Docker Compose để quản lý services, networks, volumes
+- Environment variables và health checks
+- Dependency management giữa services
+- Debugging multi-container applications
+
+**Bắt đầu**: Xem [docker-compose-lab/README.md](docker-compose-lab/README.md)
 
 ### Kubernetes YAML Labs
 
@@ -119,6 +150,13 @@ cd building-images
 # Đọc README.md và làm theo hướng dẫn
 ```
 
+**Nếu bạn muốn học Docker Compose:**
+
+```bash
+cd docker-compose-lab
+# Đọc README.md và làm theo hướng dẫn
+```
+
 **Nếu bạn đã biết Docker và muốn học Kubernetes:**
 
 ```bash
@@ -149,6 +187,20 @@ cd k8s-yaml-labs
 
 **Thời gian ước tính**: 1-2 giờ
 
+### Docker Compose Lab
+
+**Mục tiêu**: Hiểu cách sử dụng Docker Compose để orchestrate multi-container applications, quản lý services, networks, và volumes.
+
+**Các bài thực hành**:
+
+- Triển khai web app với frontend, backend, và database
+- Services, networks, volumes trong Docker Compose
+- Environment variables và health checks
+- Dependency management và service communication
+- Debugging và troubleshooting
+
+**Thời gian ước tính**: 1-2 giờ
+
 ### Kubernetes YAML Labs
 
 **Mục tiêu**: Thành thạo viết YAML cho Kubernetes, hiểu các resource types và cách debug.
@@ -172,6 +224,19 @@ Sau khi hoàn thành lab, nhớ cleanup resources:
 # Xóa images/containers đã tạo
 docker image rm local:dockerfile-example local:env-basic
 docker container prune
+```
+
+**Docker Compose:**
+
+```bash
+cd docker-compose-lab
+bash scripts/cleanup.sh
+```
+
+Hoặc thủ công:
+```bash
+cd docker-compose-lab
+docker compose down -v
 ```
 
 **Kubernetes:**
@@ -203,8 +268,10 @@ Repo này dùng cho mục đích học tập và thực hành.
 ## 🔗 Tài liệu tham khảo
 
 - [Docker Documentation](https://docs.docker.com/)
+- [Docker Compose Documentation](https://docs.docker.com/compose/)
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Dockerfile Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+- [Docker Compose File Reference](https://docs.docker.com/compose/compose-file/)
 - [Kubernetes YAML Reference](https://kubernetes.io/docs/reference/kubernetes-api/)
 
 ---
