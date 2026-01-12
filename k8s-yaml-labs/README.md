@@ -17,6 +17,33 @@ Bộ bài thực hành về Kubernetes YAML với 6 bài lab từ cơ bản đ�
 - **05-multi-resource**: File YAML chứa nhiều resources
 - **06-debug-yaml**: Debug các lỗi YAML thường gặp
 
+## 0. Chuẩn bị.
+### Chuẩn bị k8s cluster trong docker desktop:
+1. Tạo k8s cluster:
+Có nhiều cách tạo k8s cluster, nhưng để thân thiện với người dùng windows nên sử dụng docker-desktop.
+
+Mở `docker-desktop`-> chọn `Kubenertes`-> `Create cluster`
+![alt text](images/image.png)
+2. Chọn `Kind`  và nhấn `Create`
+![alt text](images/image-1.png)
+
+### Tải repo về máy local với lệnh trong powershell
+```bash
+git clone git@github.com:windatm/devops-lab.git
+```
+Hoặc tải trực tiếp file nén theo link: https://github.com/windatm/devops-lab/archive/refs/heads/main.zip sau đó giải nén.
+
+Lấy đường dẫn đến file vừa giải nén. Ví dụ : `C:\Users\User\AppData\Local\Packages\devops-lab`
+
+
+Mở terminal trong docker-desktop và nhập lệnh đổi con trỏ thư mục tới thư mục vừa tải xuống.
+```bash
+cd C:\Users\User\AppData\Local\Packages\devops-lab
+```
+![alt text](images/image-2.png)
+
+Sau đó thực hiện lab theo các bài phía dưới.
+
 ## Bài 1: Pod
 
 Tạo Pod nginx đơn giản.
